@@ -86,3 +86,13 @@ describe("Sellin", function() {
 
   });
 });
+
+describe("Conjure", function() {
+  it("degrade", function() {
+    const gildedRose = new Shop([new Item("Conjured", 10, 10)]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toBe(8);
+    expect(items[0].sellIn).toBe(9);
+
+  });
+});
