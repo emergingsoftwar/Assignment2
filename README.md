@@ -3,10 +3,10 @@
 This is the Gilded Rose kata in JavaScript with Jest
 
 ## Team Members:             
-Leul Endashaw:                 
-Gopi Macha:                   
-Sai Krupa Bariki Vidura:        
-Terry Boyett:                   
+Leul Endashaw                
+Gopi Macha                
+Sai Krupa Bariki Vidura      
+Terry Boyett           
 
  ## Mob Programming Video - Unit Tests and Refactoring
  https://youtu.be/57SMlX8C8gA
