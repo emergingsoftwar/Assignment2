@@ -28,9 +28,15 @@ describe("First Test Suite", function() {
     expect(items[0].sellIn).toBe(1);
   });
   
-
+  it("degrade in Quality when selling <0", function() {
+    const gildedRose = new Shop([new Item("any", -1, 1)]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toBe(0);
+});
 
 });
+
+
 
 describe("Quality negative", function() {
   it("Quality negative", function() {
@@ -42,13 +48,25 @@ describe("Quality negative", function() {
 
 describe("The Quality of an item is never more than 50", function() {
   it("Quality", function() {
-    const gildedRose = new Shop([new Item("Aged Brie", 5, 52)]);
+    const gildedRose = new Shop([new Item("Aged Brie", -1, 49)]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toBe(50);
+  });
+  it("The Quality never more than 50", function() {
+    const gildedRose = new Shop([new Item("Aged Brie", 20, 50)]);
     const items = gildedRose.updateQuality();
     expect(items[0].quality).toBe(50);
   });
 });
 
-describe("Backstage passes, like aged brie, increases in Quality as its SellIn value approaches", function() {
+
+describe("Backstage passes", function() {
+  it("increases in Quality as its SellIn value approaches", function() {
+    const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 20, 20)]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toBe(21);
+});
+
   it("Backstage pass test", function() {
     const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 5, 40)]);
     const items = gildedRose.updateQuality();
@@ -67,6 +85,18 @@ describe("Backstage passes, like aged brie, increases in Quality as its SellIn v
     expect(items[0].quality).toBe(0);
   });
 
+  it("selling <11 Quality max 50", function() {
+    const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49)]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toBe(50);
+  });
+
+  it("selling <6 Quality max 50", function() {
+    const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 5, 48)]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toBe(50);
+});
+
 });
 
 describe("Sulfuras", function() {
@@ -76,6 +106,13 @@ describe("Sulfuras", function() {
     expect(items[0].quality).toBe(30);
     expect(items[0].sellIn).toBe(0);
   });
+
+  it("constant in Quality when selling <0", function() {
+    const gildedRose = new Shop([new Item("Sulfuras, Hand of Ragnaros", -1, 80)]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toBe(80);
+  }); 
+  
 });
 
 describe("Sellin", function() {
