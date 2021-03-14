@@ -29,5 +29,5 @@ To generate test coverage report
 ```sh
 npm run test:coverage
 ```
- ## Mob Programming - Unit Tests and Refactoring
+ ## Mob Programming Video - Unit Tests and Refactoring
  https://youtu.be/57SMlX8C8gA
