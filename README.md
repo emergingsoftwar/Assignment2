@@ -26,7 +26,7 @@ We used the Microsoft Teams application because of its ability to record session
 ### Conjured item test results
 ![alt text](/screenshots/Test%20Result%20-%20Conjured%20Item.png "Conjured item test results")
 
-## coverage Results
+## Coverage Results
 ### Original code coverage results
 ![alt text](/screenshots/Code%20Coverage%20-%20Orignal%20Code.png "Original code coverage results")
 ### Refactored code coverage results
