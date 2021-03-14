@@ -29,6 +29,12 @@ To generate test coverage report
 ```sh
 npm run test:coverage
 ```
+### Team Members:             
+Leul Endashaw:                 
+Gopi Macha:                   
+Sai Krupa Bariki Vidura:        
+Terry Boyett:                   
+
  ## Mob Programming Video - Unit Tests and Refactoring
  https://youtu.be/57SMlX8C8gA
 
